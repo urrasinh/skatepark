@@ -40,9 +40,29 @@
   </form>
 </div>
 
-
 <script>
-// ver minuto 8.40 
-// video "Creación del proyecto, primeros pasos (Parte II)"
+  $('button').click(async () => {
+    const email = $('#email').val()
+    const nombre = $('#nombre').val()
+    const pass1 = $('#pass1').val()
+    const pass2 = $('#pass2').val()
+    const experiencia = $('#experiencia').val()
+    const especialidad = $('#especialidad').val()
+    const foto = $('#foto').val()
+
+    const payload = { email, nombre, pass1, pass2, experiencia, especialidad, foto }
+    try {
+      await axios.post('/Registro', payload)
+      alert("Usuario registrado con exito")
+
+      window.location.href = "/login"
+    }
+    catch ({ response }) {
+      const { data } = response
+      const { error } = data
+      alert(error)
+    }
+  })
+
 
 </script>

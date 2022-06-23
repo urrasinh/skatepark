@@ -1,7 +1,6 @@
 {
   "name": "final",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +15,14 @@
     "express-handlebars": "^6.0.6",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urrasinh/skatepark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/urrasinh/skatepark/issues"
+  },
+  "homepage": "https://github.com/urrasinh/skatepark#readme",
+  "description": ""
 }

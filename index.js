@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const secretKey = 'shhhh'
 
-const { } = require('./consultas') // import
+const { nuevoUsuario, getUsuarios } = require('./consultas') // import
 
 
 // Middlewares
@@ -36,6 +36,46 @@ app.set('view engine', 'handlebars')
 
 app.get('/', function (req, res) {
     res.render('Home')
+})
+
+// ruta login
+app.get('/login', async (req, res) => {
+    res.render('login')
+})
+
+app.get('/registro', function (req, res) {
+    res.render('registro')
+})
+
+app.get('/datos', function (req, res) {
+    res.render('datos')
+})
+/*
+app.get('/admin', async (req, res) => {
+    try {
+        const usuarios = await getUsuarios()
+        res.render('admin', { usuarios })
+    } catch (error) {
+        res.status(500).send({
+            error: `Algo salio mal ${error}`,
+            code: 500
+        })
+
+    }
+})
+*/
+
+app.post("/", async (req, res)=> {
+    const { email, nombre, pass1, experiencia, especialidad, foto } = req.body
+    try {
+        const usuario = await nuevoUsuario(email, nombre, pass1, experiencia, especialidad, foto)
+        res.status(201).send(usuario)
+    }catch (e){
+        res.status(500).send({
+            error:`¡Error! ${e}`,
+            code: 500
+        })
+    }
 })
 
 
