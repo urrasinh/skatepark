@@ -1,6 +1,6 @@
 # Prueba skatepark
 
-## Dependencias
+### Dependencias
 
  ``body-parser: 1.20.0``  
  ``bootstrap: 4.6.0``  
@@ -11,7 +11,7 @@
  ``pg: 8.7.3``  
 
 
-## Requerimientos
+### Requerimientos
 
 ● Crear una API REST con el Framework Express.  
 ● Servir contenido dinámico con express-handlebars.  
